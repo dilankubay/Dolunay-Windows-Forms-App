@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            bakimFormuBtn = new Button();
+            SuspendLayout();
+            // 
+            // bakimFormuBtn
+            // 
+            bakimFormuBtn.Location = new Point(307, 185);
+            bakimFormuBtn.Name = "bakimFormuBtn";
+            bakimFormuBtn.Size = new Size(94, 29);
+            bakimFormuBtn.TabIndex = 0;
+            bakimFormuBtn.Text = "Bakım Formları";
+            bakimFormuBtn.UseVisualStyleBackColor = true;
+            bakimFormuBtn.Click += bakimFormuBtn_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(20, 21, 37);
+            ClientSize = new Size(1210, 632);
+            Controls.Add(bakimFormuBtn);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button bakimFormuBtn;
     }
 }

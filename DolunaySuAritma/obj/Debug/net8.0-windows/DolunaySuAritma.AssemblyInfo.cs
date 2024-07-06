@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DolunaySuAritma")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61e663e6ab60d46c2832d3a04cb706adbdccbe23")]
 [assembly: System.Reflection.AssemblyProductAttribute("DolunaySuAritma")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DolunaySuAritma")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

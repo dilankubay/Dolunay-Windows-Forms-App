@@ -6,5 +6,11 @@ namespace DolunaySuAritma
         {
             InitializeComponent();
         }
+
+        private void bakimFormuBtn_Click(object sender, EventArgs e)
+        {
+            BakimFormlari form = new BakimFormlari();
+            form.Show();
+        }
     }
 }
