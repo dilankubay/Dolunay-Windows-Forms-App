@@ -9,7 +9,7 @@ namespace DolunaySuAritma
 
         private void bakimFormuBtn_Click(object sender, EventArgs e)
         {
-            BakimFormlari form = new BakimFormlari();
+            fdf form = new fdf();
             form.Show();
         }
     }
