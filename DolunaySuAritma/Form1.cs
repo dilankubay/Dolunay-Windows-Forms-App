@@ -12,5 +12,11 @@ namespace DolunaySuAritma
             fdf form = new fdf();
             form.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BakimFormlariListesi form = new BakimFormlariListesi();
+            form.Show();
+        }
     }
 }

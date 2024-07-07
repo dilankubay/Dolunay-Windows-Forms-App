@@ -121,3 +121,4 @@ C:\Users\dilan\OneDrive\Belgeler\.NET\C#\Projects\DolunaySuAritma\DolunaySuAritm
 C:\Users\dilan\OneDrive\Belgeler\.NET\C#\Projects\DolunaySuAritma\DolunaySuAritma\obj\Debug\net8.0-windows\DolunaySuAritma.genruntimeconfig.cache
 C:\Users\dilan\OneDrive\Belgeler\.NET\C#\Projects\DolunaySuAritma\DolunaySuAritma\obj\Debug\net8.0-windows\ref\DolunaySuAritma.dll
 C:\Users\dilan\OneDrive\Belgeler\.NET\C#\Projects\DolunaySuAritma\DolunaySuAritma\obj\Debug\net8.0-windows\DolunaySuAritma.fdf.resources
+C:\Users\dilan\OneDrive\Belgeler\.NET\C#\Projects\DolunaySuAritma\DolunaySuAritma\obj\Debug\net8.0-windows\DolunaySuAritma.BakimFormlariListesi.resources

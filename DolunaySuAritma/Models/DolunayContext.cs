@@ -19,7 +19,7 @@ public partial class DolunayContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DILANKUBAY\\SQLEXPRESS;Database=Dolunay;Integrated Security=True;TrustServerCertificate=true;");
+        => optionsBuilder.UseSqlServer("Server=DILANKUBAY\\SQLEXPRESS;Database=Dolunay;User Id=sa;Password=D12ilan45;TrustServerCertificate=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -32,12 +32,27 @@ public partial class DolunayContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("ad");
             entity.Property(e => e.Adres).HasColumnName("adres");
+            entity.Property(e => e.CesmeTarih)
+                .HasColumnType("datetime")
+                .HasColumnName("cesmeTarih");
+            entity.Property(e => e.MembranTarih)
+                .HasColumnType("datetime")
+                .HasColumnName("membranTarih");
             entity.Property(e => e.Soyad)
                 .HasMaxLength(50)
                 .HasColumnName("soyad");
+            entity.Property(e => e.TankTarih)
+                .HasColumnType("datetime")
+                .HasColumnName("tankTarih");
+            entity.Property(e => e.TatlandiriciTarih)
+                .HasColumnType("datetime")
+                .HasColumnName("tatlandiriciTarih");
             entity.Property(e => e.TelNo)
                 .HasMaxLength(15)
                 .HasColumnName("telNo");
+            entity.Property(e => e.UcFiltreTarih)
+                .HasColumnType("datetime")
+                .HasColumnName("ucFiltreTarih");
         });
 
         OnModelCreatingPartial(modelBuilder);

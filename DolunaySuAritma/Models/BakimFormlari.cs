@@ -14,4 +14,14 @@ public partial class BakimFormlari
     public string? TelNo { get; set; }
 
     public string? Adres { get; set; }
+
+    public DateTime? UcFiltreTarih { get; set; }
+
+    public DateTime? MembranTarih { get; set; }
+
+    public DateTime? TatlandiriciTarih { get; set; }
+
+    public DateTime? CesmeTarih { get; set; }
+
+    public DateTime? TankTarih { get; set; }
 }

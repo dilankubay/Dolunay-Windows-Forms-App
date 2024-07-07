@@ -29,17 +29,28 @@
         private void InitializeComponent()
         {
             bakimFormuBtn = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // bakimFormuBtn
             // 
-            bakimFormuBtn.Location = new Point(307, 185);
+            bakimFormuBtn.Location = new Point(194, 195);
             bakimFormuBtn.Name = "bakimFormuBtn";
-            bakimFormuBtn.Size = new Size(94, 29);
+            bakimFormuBtn.Size = new Size(152, 51);
             bakimFormuBtn.TabIndex = 0;
             bakimFormuBtn.Text = "Bakım Formları";
             bakimFormuBtn.UseVisualStyleBackColor = true;
             bakimFormuBtn.Click += bakimFormuBtn_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(382, 195);
+            button1.Name = "button1";
+            button1.Size = new Size(184, 51);
+            button1.TabIndex = 1;
+            button1.Text = "Bakım Formları Listesi";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
@@ -47,6 +58,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(20, 21, 37);
             ClientSize = new Size(1210, 632);
+            Controls.Add(button1);
             Controls.Add(bakimFormuBtn);
             Name = "Form1";
             Text = "Form1";
@@ -56,5 +68,6 @@
         #endregion
 
         private Button bakimFormuBtn;
+        private Button button1;
     }
 }
