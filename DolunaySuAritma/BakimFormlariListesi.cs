@@ -37,7 +37,7 @@ namespace DolunaySuAritma
         }
         private void BakimFormlariListesi_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

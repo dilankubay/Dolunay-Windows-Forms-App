@@ -30,9 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            bakimFormlariBindingSource = new BindingSource(components);
-            bakimFormlariBindingSource1 = new BindingSource(components);
-            bakimFormlariBindingSource2 = new BindingSource(components);
             ıdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             adDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             soyadDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -43,10 +40,13 @@
             tatlandiriciTarihDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cesmeTarihDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tankTarihDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            bakimFormlariBindingSource2 = new BindingSource(components);
+            bakimFormlariBindingSource = new BindingSource(components);
+            bakimFormlariBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bakimFormlariBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bakimFormlariBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bakimFormlariBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bakimFormlariBindingSource2).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -55,23 +55,12 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ıdDataGridViewTextBoxColumn, adDataGridViewTextBoxColumn, soyadDataGridViewTextBoxColumn, telNoDataGridViewTextBoxColumn, adresDataGridViewTextBoxColumn, ucFiltreTarihDataGridViewTextBoxColumn, membranTarihDataGridViewTextBoxColumn, tatlandiriciTarihDataGridViewTextBoxColumn, cesmeTarihDataGridViewTextBoxColumn, tankTarihDataGridViewTextBoxColumn });
             dataGridView1.DataSource = bakimFormlariBindingSource2;
-            dataGridView1.Location = new Point(3, -12);
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1135, 450);
+            dataGridView1.Size = new Size(1359, 733);
             dataGridView1.TabIndex = 0;
-            // 
-            // bakimFormlariBindingSource
-            // 
-            bakimFormlariBindingSource.DataSource = typeof(Models.BakimFormlari);
-            // 
-            // bakimFormlariBindingSource1
-            // 
-            bakimFormlariBindingSource1.DataSource = typeof(Models.BakimFormlari);
-            // 
-            // bakimFormlariBindingSource2
-            // 
-            bakimFormlariBindingSource2.DataSource = typeof(Models.BakimFormlari);
             // 
             // ıdDataGridViewTextBoxColumn
             // 
@@ -153,19 +142,31 @@
             tankTarihDataGridViewTextBoxColumn.Name = "tankTarihDataGridViewTextBoxColumn";
             tankTarihDataGridViewTextBoxColumn.Width = 125;
             // 
+            // bakimFormlariBindingSource2
+            // 
+            bakimFormlariBindingSource2.DataSource = typeof(Models.BakimFormlari);
+            // 
+            // bakimFormlariBindingSource
+            // 
+            bakimFormlariBindingSource.DataSource = typeof(Models.BakimFormlari);
+            // 
+            // bakimFormlariBindingSource1
+            // 
+            bakimFormlariBindingSource1.DataSource = typeof(Models.BakimFormlari);
+            // 
             // BakimFormlariListesi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1135, 450);
+            ClientSize = new Size(1359, 733);
             Controls.Add(dataGridView1);
             Name = "BakimFormlariListesi";
             Text = "BakimFormlariListesi";
             Load += BakimFormlariListesi_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bakimFormlariBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)bakimFormlariBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)bakimFormlariBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bakimFormlariBindingSource2).EndInit();
             ResumeLayout(false);
         }
 
