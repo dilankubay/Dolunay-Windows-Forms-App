@@ -28,6 +28,7 @@ namespace DolunaySuAritma
                 {
                     var data = context.BakimFormlaris.ToList(); // Replace with your actual DbSet property
                     dataGridView1.DataSource = data;
+                    dataGridView1.Refresh();
                 }
                 catch (Exception ex)
                 {

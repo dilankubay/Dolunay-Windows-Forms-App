@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DolunaySuAritma.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DolunaySuAritma
 {
     public partial class fdf : Form
     {
+        private DolunayContext db;
         Dictionary<string, List<string>> citiesAndDistricts;
         public fdf()
         {
             InitializeComponent();
+            db = new DolunayContext();
             citiesAndDistricts = new Dictionary<string, List<string>>
         {
              {"İzmir", new List<string> { "Aliağa, Balçova, Bayındır, Bayraklı, Bergama, Beydağ, Bornova, Buca, Çeşme, Çiğli, Dikili, Foça, Gaziemir, Güzelbahçe, Karabağlar, Karaburun, Karşıyaka, Kemalpaşa, Kınık, Kiraz, Konak, Menderes, Menemen, Narlıdere, Ödemiş, Seferihisar, Selçuk, Tire, Torbalı, Urla" } },
@@ -24,12 +28,19 @@ namespace DolunaySuAritma
                   {"Aydın", new List<string> { "Bozdoğan, Buharkent, Çine, Didim, Efeler, Germencik, Karacasu, Karpuzlu, Koçarlı, Köşk, Kuşadası, Kuyucak, Nazilli, Söke, Sultanhisar, Yenipazar\r\n" } }
             };
         }
+        public int GetId()
+        {
+            BakimFormlari form = new BakimFormlari();
+            int id = form.Id;
+            return id;
+        }
         private void BakimFormlari_Load(object sender, EventArgs e)
         {
             foreach (var city in citiesAndDistricts.Keys)
             {
                 sehirComboBox.Items.Add(city);
             }
+            this.Location = new Point(0, 0);
         }
         private void sehirComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -111,7 +122,7 @@ namespace DolunaySuAritma
         {
             // Bu alana tıklama ile ilgili yapılacak işlemleri ekleyin
         }
- 
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -134,6 +145,86 @@ namespace DolunaySuAritma
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ekleBtn_Click(object sender, EventArgs e)
+        {
+            var obje = db.BakimFormlaris.Where(x => x.Id == GetId()).FirstOrDefault();
+
+            if (obje == null)
+            {
+                BakimFormlari ekle = new BakimFormlari();
+                ekle.AdSoyad = adTextBox.Text;
+                ekle.Sehir = sehirComboBox.Text;
+                ekle.Ilce = ilceComboBox.Text;
+                ekle.Mahalle = mahalleTextBox.Text;
+                ekle.Adres = adresTextBox.Text;
+                ekle.TelNo = telefonTextBox.Text;
+
+                if (checkBox2.Checked == true)
+                {
+                    if(textBox1.Text == "1")
+                    {
+                        ekle.BirFiltreDegisimTarihi = DateTime.Parse(ucFiltreDateTime.Text);
+                        ekle.BirFiltreDegisimUcreti = ucFiltreUcretTextBox.Text;
+                    }
+                    else if(textBox1.Text == "2")
+                    {
+                        ekle.IkiFiltreDegisimTarihi  = DateTime.Parse(ucFiltreDateTime.Text);
+                        ekle.IkiFiltreDegisimUcreti  = ucFiltreUcretTextBox.Text;
+                    }
+                    else if(textBox1.Text == "3")
+                    {
+                        ekle.UcFiltreDegisimTarihi = DateTime.Parse(ucFiltreDateTime.Text);
+                        ekle.UcFiltreDegisimUcreti = ucFiltreUcretTextBox.Text;
+                    }
+                    else if(textBox1.Text == "4")
+                    {
+                        ekle.DortFiltreDegisimTarihi = DateTime.Parse(ucFiltreDateTime.Text);
+                        ekle.DortFiltreDegisimUcreti = ucFiltreUcretTextBox.Text;
+                    }
+                    else if(textBox1.Text == "5")
+                    {
+                        ekle.BesFiltreDegisimTarihi = DateTime.Parse(ucFiltreDateTime.Text);
+                        ekle.BesFiltreDegisimUcreti = ucFiltreUcretTextBox.Text;
+                    }
+                    
+                }
+               /* if (checkBox5.Checked == true)
+                {
+                    ekle.MembranTarih = DateTime.Parse(membranDateTime.Text);
+                }
+                if (checkBox4.Checked == true)
+                {
+                    ekle.TatlandiriciTarih = DateTime.Parse(tatDateTime.Text);
+                }
+                if (checkBox3.Checked == true)
+                {
+                    ekle.CesmeTarih = DateTime.Parse(cesmeDateTime.Text);
+                }
+
+                if (checkBox6.Checked == true)
+                {
+                    ekle.TankTarih = DateTime.Parse(tankDateTime.Text);
+                }
+                if(textBox1.Text == "1")
+                {
+                    ekle.BirDegisimUcreti = ucFiltreUcretTextBox.Text;
+                }*/
+                db.BakimFormlaris.Add(ekle);
+                db.SaveChanges();
+                MessageBox.Show("Yeni veri kaydı başarıyla oluşturuldu.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            }
+
+
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
         {
 
         }

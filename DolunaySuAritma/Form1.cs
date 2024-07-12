@@ -5,6 +5,9 @@ namespace DolunaySuAritma
         public Form1()
         {
             InitializeComponent();
+            
+            this.Location = new Point(0, 0);
+
         }
 
         private void bakimFormuBtn_Click(object sender, EventArgs e)

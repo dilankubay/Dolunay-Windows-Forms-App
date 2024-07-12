@@ -30,9 +30,13 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
+            bakimFormlariBindingSource2 = new BindingSource(components);
+            bakimFormlariBindingSource = new BindingSource(components);
+            bakimFormlariBindingSource1 = new BindingSource(components);
             ıdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            adDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            soyadDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            AdSoyad = new DataGridViewTextBoxColumn();
+            Sehir = new DataGridViewTextBoxColumn();
+            Ilce = new DataGridViewTextBoxColumn();
             telNoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             adresDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ucFiltreTarihDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -40,9 +44,6 @@
             tatlandiriciTarihDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cesmeTarihDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tankTarihDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            bakimFormlariBindingSource2 = new BindingSource(components);
-            bakimFormlariBindingSource = new BindingSource(components);
-            bakimFormlariBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bakimFormlariBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bakimFormlariBindingSource).BeginInit();
@@ -53,7 +54,7 @@
             // 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ıdDataGridViewTextBoxColumn, adDataGridViewTextBoxColumn, soyadDataGridViewTextBoxColumn, telNoDataGridViewTextBoxColumn, adresDataGridViewTextBoxColumn, ucFiltreTarihDataGridViewTextBoxColumn, membranTarihDataGridViewTextBoxColumn, tatlandiriciTarihDataGridViewTextBoxColumn, cesmeTarihDataGridViewTextBoxColumn, tankTarihDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ıdDataGridViewTextBoxColumn, AdSoyad, Sehir, Ilce, telNoDataGridViewTextBoxColumn, adresDataGridViewTextBoxColumn, ucFiltreTarihDataGridViewTextBoxColumn, membranTarihDataGridViewTextBoxColumn, tatlandiriciTarihDataGridViewTextBoxColumn, cesmeTarihDataGridViewTextBoxColumn, tankTarihDataGridViewTextBoxColumn });
             dataGridView1.DataSource = bakimFormlariBindingSource2;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
@@ -61,6 +62,18 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1359, 733);
             dataGridView1.TabIndex = 0;
+            // 
+            // bakimFormlariBindingSource2
+            // 
+            bakimFormlariBindingSource2.DataSource = typeof(Models.BakimFormlari);
+            // 
+            // bakimFormlariBindingSource
+            // 
+            bakimFormlariBindingSource.DataSource = typeof(Models.BakimFormlari);
+            // 
+            // bakimFormlariBindingSource1
+            // 
+            bakimFormlariBindingSource1.DataSource = typeof(Models.BakimFormlari);
             // 
             // ıdDataGridViewTextBoxColumn
             // 
@@ -70,21 +83,29 @@
             ıdDataGridViewTextBoxColumn.Name = "ıdDataGridViewTextBoxColumn";
             ıdDataGridViewTextBoxColumn.Width = 125;
             // 
-            // adDataGridViewTextBoxColumn
+            // AdSoyad
             // 
-            adDataGridViewTextBoxColumn.DataPropertyName = "Ad";
-            adDataGridViewTextBoxColumn.HeaderText = "Ad";
-            adDataGridViewTextBoxColumn.MinimumWidth = 6;
-            adDataGridViewTextBoxColumn.Name = "adDataGridViewTextBoxColumn";
-            adDataGridViewTextBoxColumn.Width = 125;
+            AdSoyad.DataPropertyName = "AdSoyad";
+            AdSoyad.HeaderText = "Ad Soyad";
+            AdSoyad.MinimumWidth = 6;
+            AdSoyad.Name = "AdSoyad";
+            AdSoyad.Width = 125;
             // 
-            // soyadDataGridViewTextBoxColumn
+            // Sehir
             // 
-            soyadDataGridViewTextBoxColumn.DataPropertyName = "Soyad";
-            soyadDataGridViewTextBoxColumn.HeaderText = "Soyad";
-            soyadDataGridViewTextBoxColumn.MinimumWidth = 6;
-            soyadDataGridViewTextBoxColumn.Name = "soyadDataGridViewTextBoxColumn";
-            soyadDataGridViewTextBoxColumn.Width = 125;
+            Sehir.DataPropertyName = "Sehir";
+            Sehir.HeaderText = "Şehir";
+            Sehir.MinimumWidth = 6;
+            Sehir.Name = "Sehir";
+            Sehir.Width = 125;
+            // 
+            // Ilce
+            // 
+            Ilce.DataPropertyName = "Ilce";
+            Ilce.HeaderText = "İlçe";
+            Ilce.MinimumWidth = 6;
+            Ilce.Name = "Ilce";
+            Ilce.Width = 125;
             // 
             // telNoDataGridViewTextBoxColumn
             // 
@@ -142,18 +163,6 @@
             tankTarihDataGridViewTextBoxColumn.Name = "tankTarihDataGridViewTextBoxColumn";
             tankTarihDataGridViewTextBoxColumn.Width = 125;
             // 
-            // bakimFormlariBindingSource2
-            // 
-            bakimFormlariBindingSource2.DataSource = typeof(Models.BakimFormlari);
-            // 
-            // bakimFormlariBindingSource
-            // 
-            bakimFormlariBindingSource.DataSource = typeof(Models.BakimFormlari);
-            // 
-            // bakimFormlariBindingSource1
-            // 
-            bakimFormlariBindingSource1.DataSource = typeof(Models.BakimFormlari);
-            // 
             // BakimFormlariListesi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -175,9 +184,13 @@
         private DataGridView dataGridView1;
         private BindingSource bakimFormlariBindingSource;
         private BindingSource bakimFormlariBindingSource1;
-        private DataGridViewTextBoxColumn ıdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn adDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn soyadDataGridViewTextBoxColumn;
+        private BindingSource bakimFormlariBindingSource2;
+        private DataGridViewTextBoxColumn ıdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn AdSoyad;
+        private DataGridViewTextBoxColumn Sehir;
+        private DataGridViewTextBoxColumn Ilce;
         private DataGridViewTextBoxColumn telNoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn adresDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn ucFiltreTarihDataGridViewTextBoxColumn;
@@ -185,6 +198,5 @@
         private DataGridViewTextBoxColumn tatlandiriciTarihDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cesmeTarihDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tankTarihDataGridViewTextBoxColumn;
-        private BindingSource bakimFormlariBindingSource2;
     }
 }
